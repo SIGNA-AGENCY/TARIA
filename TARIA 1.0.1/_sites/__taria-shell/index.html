@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TARIA</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">TARIA</div>
+      <div class="status" id="status">READY</div>
+    </header>
+
+    <section class="screen" id="screen" aria-live="polite" aria-label="Terminal output">
+      <div class="output" id="output"></div>
+
+      <div class="prompt-row" id="promptRow">
+        <span class="prompt" id="promptLabel">TARIA&gt;</span>
+        <input
+          id="cmd"
+          class="cmd"
+          type="text"
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+          inputmode="text"
+          aria-label="Command input"
+        />
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
