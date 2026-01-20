@@ -80,6 +80,7 @@ Editing instead of clicking through twenty admin screens.
 Example:
 
 arash@taria:~$ edit page about
+
 Opening content/pages/about.json
 
 
