@@ -1,4 +1,4 @@
-*TARIA
+# TARIA
 
 TARIA exists to collapse the distance between having an idea and making it real. Publishing should not feel like operating software. It should feel like thinking out loud. If you can type a sentence, that sentence should appear online without wrestling with dashboards, plugins, databases, or hosting rituals. Words go in. The world comes out. Everything in TARIA is built to eliminate friction between intent and expression.
 
