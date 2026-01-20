@@ -6,4 +6,4 @@ Under the hood, TARIA is a radically simple engine. File based content. No datab
 
 The vision extends beyond publishing into dialogue and governance. Websites become conversational partners that help draft, edit, publish, and interpret performance in plain language. For organizations, brand guidelines become machine readable law that automatically enforces tone, compliance, and identity. SIGNA designs the identity. TARIA enforces it. The result is a new foundation for communication where individuals truly own their presence, teams move faster, and ideas travel from mind to world with almost no resistance.
 
-- Arash
+– Arash
