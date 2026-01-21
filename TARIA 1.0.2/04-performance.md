@@ -14,4 +14,4 @@ The combined result is a system that produces extremely small response payloads,
 
 In practical terms, pages appear rather than load.
 
-– Arash
+– Arash Giani

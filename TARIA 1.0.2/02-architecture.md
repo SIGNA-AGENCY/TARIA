@@ -19,4 +19,4 @@ The result is a system where typed commands control a site factory, content live
 Words in.
 World out.
 
-– Arash
+– Arash Giani

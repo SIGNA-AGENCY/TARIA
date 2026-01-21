@@ -12,4 +12,4 @@ Because every interaction is structured and stateless beyond its immediate flow,
 
 The result is an interface that disappears into workflow. You type intent. The system executes. The world updates.
 
-– Arash
+– Arash Giani

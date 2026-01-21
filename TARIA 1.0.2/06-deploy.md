@@ -16,4 +16,4 @@ The deployment philosophy is minimal infrastructure, transparent behavior, and f
 
 In short, TARIA deploys like static files, operates like an application, and recovers like a simple archive.
 
-– Arash
+– Arash Giani

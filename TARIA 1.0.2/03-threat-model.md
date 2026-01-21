@@ -19,4 +19,4 @@ The result is a system designed to fail safely, recover quickly, resist common w
 
 In short, TARIA reduces security risk not by adding layers of defense, but by removing unnecessary complexity.
 
-– Arash
+– Arash Giani

@@ -20,4 +20,4 @@
 
 10. Global first: Native RTL. Multi language by default. Onion and SMS pathways. Built for voices everywhere, not just the privileged web.
 
-– Arash
+– Arash Giani
