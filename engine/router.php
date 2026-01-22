@@ -12,29 +12,17 @@ $base = $isApi
     : TARIA_ROOT . '/public/pages';
 
 $path = $isApi
-    ? substr($uri, 4) ?: '/index'
+    ? substr($uri, 4) ?: '/status'
     : $uri;
 
 $file = $base . $path . '.php';
 
-// Guard rails
 $realBase = realpath($base);
 $realFile = realpath($file);
 
 if ($realFile === false || strncmp($realFile, $realBase, strlen($realBase)) !== 0) {
-    http_response_code(404);
-    echo $isApi ? json_encode(['error' => 'Not found']) : 'TARIA: route not found';
+    require TARIA_ROOT . '/public/pages/404.php';
     exit;
-}
-
-if (!is_file($realFile)) {
-    http_response_code(404);
-    echo $isApi ? json_encode(['error' => 'Not found']) : 'TARIA: route not found';
-    exit;
-}
-
-if ($isApi) {
-    header('Content-Type: application/json; charset=utf-8');
 }
 
 require $realFile;

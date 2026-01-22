@@ -1,6 +1,8 @@
 <?php
+declare(strict_types=1);
+
 echo json_encode([
-    'name' => 'TARIA',
+    'name'   => 'TARIA',
     'status' => 'online',
-    'time' => time(),
+    'time'   => time(),
 ]);
