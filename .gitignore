@@ -1,3 +1,5 @@
-TARIA 1.0.2/public/index.php
+.env
+/storage/cache/*
+/storage/logs/*
+/storage/locks/*
 .DS_Store
-**/.DS_Store
