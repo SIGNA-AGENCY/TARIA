@@ -1,2 +1,2 @@
 <?php
-echo '🚀 TARIA router is alive';
+echo "🏠 TARIA homepage online";
