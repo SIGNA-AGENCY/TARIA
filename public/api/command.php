@@ -2,43 +2,40 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/../../engine/Response.php';
+require_once __DIR__ . '/../../engine/Request.php';
+require_once __DIR__ . '/../../engine/CommandRegistry.php';
 
 /**
  * Command API
  *
  * Receives CLI commands and returns structured output.
- * Stateless. Synchronous. Deterministic.
+ * Execution is synchronous and deterministic.
  */
 
-// --------------------------------------------------
-// Read raw JSON input
-// --------------------------------------------------
-$raw = file_get_contents('php://input');
-$data = json_decode($raw, true);
+$request = Request::fromGlobals();
+$data    = $request->json();
 
-// --------------------------------------------------
-// Validate input
-// --------------------------------------------------
-$command = trim($data['command'] ?? '');
+$command = trim((string) ($data['command'] ?? ''));
 
 if ($command === '') {
     Response::json([
-        'ok' => false,
+        'ok'     => false,
         'output' => 'No command provided'
     ], 400)->send();
     exit;
 }
 
-// --------------------------------------------------
-// Command router (temporary)
-// --------------------------------------------------
+if (!CommandRegistry::exists($command)) {
+    Response::json([
+        'ok'     => false,
+        'output' => "Unknown command: {$command}"
+    ], 400)->send();
+    exit;
+}
+
 switch ($command) {
     case 'help':
-        $output = <<<TXT
-Available commands:
-  help        Show this message
-  version     Show system version
-TXT;
+        $output = CommandRegistry::helpText();
         break;
 
     case 'version':
@@ -46,14 +43,12 @@ TXT;
         break;
 
     default:
-        $output = "Unknown command: {$command}";
+        // This should never be reached because of exists() check
+        $output = 'Command registered but not implemented';
         break;
 }
 
-// --------------------------------------------------
-// Respond
-// --------------------------------------------------
 Response::json([
-    'ok' => true,
+    'ok'     => true,
     'output' => $output
 ])->send();

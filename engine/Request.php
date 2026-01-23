@@ -1,54 +1,40 @@
 <?php
-// engine/Request.php
+declare(strict_types=1);
 
 final class Request
 {
-    public string $method;
-    public string $path;
-    public bool $isApi;
+    public function __construct(
+        public readonly string $method,
+        public readonly string $uri,
+        public readonly array  $query,
+        public readonly string $body,
+        public readonly array  $headers,
+    ) {}
 
-    public array $headers = [];
-    public array $query = [];
-    public ?array $body = null;
-    public string $rawBody;
-
-    public string $ip;
-    public float $time;
-
-    public function __construct()
+    public static function fromGlobals(): self
     {
-        $this->time   = microtime(true);
-        $this->method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
+        $method  = $_SERVER['REQUEST_METHOD'] ?? 'GET';
+        $uri     = $_SERVER['REQUEST_URI'] ?? '/';
+        $query   = $_GET ?? [];
+        $body    = file_get_contents('php://input') ?: '';
+        $headers = function_exists('getallheaders') ? getallheaders() : [];
 
-        // Path normalization
-        $uri = $_SERVER['REQUEST_URI'] ?? '/';
-        $this->path = parse_url($uri, PHP_URL_PATH) ?: '/';
-        $this->path = '/' . trim($this->path, '/');
-        if ($this->path === '//') $this->path = '/';
+        return new self(
+            method: $method,
+            uri: $uri,
+            query: $query,
+            body: $body,
+            headers: $headers
+        );
+    }
 
-        $this->isApi = str_starts_with($this->path, '/api/');
-
-        // Headers
-        foreach ($_SERVER as $key => $value) {
-            if (str_starts_with($key, 'HTTP_')) {
-                $name = strtolower(str_replace('_', '-', substr($key, 5)));
-                $this->headers[$name] = $value;
-            }
+    public function json(): array
+    {
+        if ($this->body === '') {
+            return [];
         }
 
-        $this->query = $_GET ?? [];
-
-        // Body
-        $this->rawBody = file_get_contents('php://input') ?: '';
-
-        if ($this->isApi && $this->rawBody !== '') {
-            $decoded = json_decode($this->rawBody, true);
-            if (json_last_error() === JSON_ERROR_NONE) {
-                $this->body = $decoded;
-            }
-        }
-
-        // IP (simple for now, no infra magic)
-        $this->ip = $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
+        $data = json_decode($this->body, true);
+        return is_array($data) ? $data : [];
     }
 }
