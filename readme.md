@@ -1,7 +1,7 @@
 # TARIA
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/SIGNA-AGENCY/TARIA/main/public/assets/logo.png" alt="TARIA Logo" width="300">
+  ## TARIA
   <br>
   <strong>Words In. World Out.</strong>
 </p>
