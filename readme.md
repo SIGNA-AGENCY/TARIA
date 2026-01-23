@@ -1,17 +1,15 @@
 # TARIA
 
-<p align="center">
   ## TARIA
   <br>
   <strong>Words In. World Out.</strong>
-</p>
 
-<p align="center">
+
+
   A privacy-first, file-based publishing engine. No databases. No plugins. No bloat.<br>
   Instant, portable, resilient publishing that feels like thinking out loud.
-</p>
 
-<p align="center">
+
   <a href="https://taria.app"><strong>Live Site → taria.app</strong></a>
   ·
   <a href="https://github.com/SIGNA-AGENCY/TARIA/releases">Releases</a>
@@ -19,7 +17,7 @@
   <a href="#installation">Installation</a>
   ·
   <a href="#license">License</a>
-</p>
+
 
 ## What is TARIA?
 
