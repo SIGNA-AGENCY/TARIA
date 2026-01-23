@@ -1,6 +1,4 @@
 # TARIA
-
-  ## TARIA
   <br>
   <strong>Words In. World Out.</strong>
 
