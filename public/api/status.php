@@ -1,9 +1,10 @@
 <?php
 declare(strict_types=1);
 
-echo json_encode([
-    'ok'     => true,
-    'app'    => 'TARIA',
+require_once __DIR__ . '/../../engine/Response.php';
+
+Response::json([
+    'name'   => 'TARIA',
     'status' => 'online',
     'time'   => time(),
-], JSON_UNESCAPED_SLASHES);
+], 200)->send();

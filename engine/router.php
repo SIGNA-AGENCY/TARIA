@@ -1,8 +1,6 @@
 <?php
 declare(strict_types=1);
 
-// engine/router.php
-
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri = rtrim($uri, '/');
 $uri = $uri === '' ? '/home' : $uri;
@@ -24,11 +22,6 @@ $realFile = realpath($file);
 
 if (!$realFile || strncmp($realFile, $realBase, strlen($realBase)) !== 0) {
     throw new HttpException(404, 'Route not found');
-}
-
-
-if ($isApi) {
-    header('Content-Type: application/json; charset=utf-8');
 }
 
 require $realFile;
