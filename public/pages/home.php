@@ -1,2 +1,4 @@
 <?php
-echo "🏠 TARIA homepage online";
+declare(strict_types=1);
+
+echo 'TARIA engine online.';
