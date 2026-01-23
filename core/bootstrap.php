@@ -1,51 +1,53 @@
 <?php
-// core/bootstrap.php
-
 declare(strict_types=1);
 
+/**
+ * TARIA Bootstrap
+ *
+ * Purpose:
+ * - Define absolute project root
+ * - Load core configuration
+ * - Register autoloading (manual, deterministic)
+ * - Establish global error handling
+ *
+ * This file must be loaded FIRST.
+ */
+
 // --------------------------------------------------
-// Paths
+// Absolute root of the TARIA installation
 // --------------------------------------------------
 define('TARIA_ROOT', dirname(__DIR__));
-define('TARIA_CORE', TARIA_ROOT . '/core');
-define('TARIA_ENGINE', TARIA_ROOT . '/engine');
-define('TARIA_CONFIG', TARIA_ROOT . '/config');
-define('TARIA_STORAGE', TARIA_ROOT . '/storage');
-define('TARIA_PUBLIC', TARIA_ROOT . '/public');
 
 // --------------------------------------------------
-// Environment
+// Load app configuration
 // --------------------------------------------------
-$app = require TARIA_CONFIG . '/app.php';
-
-define('TARIA_ENV', $app['env'] ?? 'production');
-
-if (TARIA_ENV === 'development') {
-    ini_set('display_errors', '1');
-    error_reporting(E_ALL);
-} else {
-    ini_set('display_errors', '0');
-    error_reporting(0);
-}
+require_once TARIA_ROOT . '/config/app.php';
 
 // --------------------------------------------------
-// Guard rails
+// Core engine includes (explicit, no magic)
 // --------------------------------------------------
-$required = [
-    TARIA_ENGINE,
-    TARIA_STORAGE,
-];
+require_once TARIA_ROOT . '/engine/HttpException.php';
+require_once TARIA_ROOT . '/engine/Request.php';
+require_once TARIA_ROOT . '/engine/Response.php';
 
-foreach ($required as $path) {
-    if (!is_dir($path)) {
-        http_response_code(500);
-        echo "TARIA boot failure: missing {$path}";
-        exit;
+// --------------------------------------------------
+// Global exception handling
+// --------------------------------------------------
+set_exception_handler(function (Throwable $e) {
+    if ($e instanceof HttpException) {
+        http_response_code($e->getCode());
+        require TARIA_ROOT . '/public/pages/404.php';
+        return;
     }
-}
 
-// --------------------------------------------------
-// Autoload (manual, intentional)
-// --------------------------------------------------
-require TARIA_ENGINE . '/router.php';
-$request = require TARIA_ENGINE . '/request.php';
+    http_response_code(500);
+
+    if (APP_DEBUG === true) {
+        echo '<pre>';
+        echo $e;
+        echo '</pre>';
+        return;
+    }
+
+    echo 'Internal Server Error';
+});

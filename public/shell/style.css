@@ -1,0 +1,56 @@
+:root {
+  --bg: #0a0a0a;
+  --fg: #e6e6e6;
+  --dim: #8a8a8a;
+  --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --lh: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--mono);
+  font-size: 1rem;
+}
+
+#terminal {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem;
+}
+
+#output {
+  flex: 1;
+  white-space: pre-wrap;
+  line-height: var(--lh);
+}
+
+#prompt {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.prefix {
+  color: var(--dim);
+}
+
+#input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: inherit;
+  font: inherit;
+}

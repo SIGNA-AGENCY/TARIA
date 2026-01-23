@@ -1,25 +1,24 @@
 <?php
+declare(strict_types=1);
 
-if (!defined('TARIA_ROOT')) {
-    define('TARIA_ROOT', dirname(__DIR__, 2));
-}
+/**
+ * TARIA Application Configuration
+ *
+ * This file defines global runtime flags.
+ * It is loaded first by bootstrap.php.
+ */
 
-if (!defined('TARIA_CORE')) {
-    define('TARIA_CORE', TARIA_ROOT . '/core');
-}
+// --------------------------------------------------
+// Environment
+// --------------------------------------------------
+define('APP_ENV', 'local');
 
-if (!defined('TARIA_ENGINE')) {
-    define('TARIA_ENGINE', TARIA_ROOT . '/engine');
-}
+// --------------------------------------------------
+// Debug mode
+// --------------------------------------------------
+define('APP_DEBUG', true);
 
-if (!defined('TARIA_CONFIG')) {
-    define('TARIA_CONFIG', TARIA_ROOT . '/config');
-}
-
-if (!defined('TARIA_STORAGE')) {
-    define('TARIA_STORAGE', TARIA_ROOT . '/storage');
-}
-
-if (!defined('TARIA_PUBLIC')) {
-    define('TARIA_PUBLIC', TARIA_ROOT . '/public');
-}
+// --------------------------------------------------
+// Application version
+// --------------------------------------------------
+define('APP_VERSION', '0.0.2');
