@@ -23,10 +23,9 @@ $realBase = realpath($base);
 $realFile = realpath($file);
 
 if (!$realFile || strncmp($realFile, $realBase, strlen($realBase)) !== 0) {
-    http_response_code(404);
-    echo $isApi ? json_encode(['error' => 'Not found']) : '404 — TARIA route not found';
-    exit;
+    throw new HttpException(404, 'Route not found');
 }
+
 
 if ($isApi) {
     header('Content-Type: application/json; charset=utf-8');

@@ -48,3 +48,4 @@ foreach ($required as $path) {
 // Autoload (manual, intentional)
 // --------------------------------------------------
 require TARIA_ENGINE . '/router.php';
+$request = require TARIA_ENGINE . '/request.php';
