@@ -1,7 +1,7 @@
 # TARIA
-  <br>
-  <strong>Words In. World Out.</strong>
 
+  <strong>Words In. World Out.</strong>
+  <br>
 
 
   A privacy-first, file-based publishing engine. No databases. No plugins. No bloat.<br>
