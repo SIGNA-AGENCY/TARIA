@@ -1,60 +1,51 @@
 # TARIA
+### **Words in. World out.**
 
-  <strong>Words In. World Out.</strong>
-  <br>
+> "A tactical communications array for the post-platform era."
 
+**TARIA** is a high-performance, database-free publishing engine designed for absolute sovereignty and rapid deployment. It is built for those who require a "Signal" that is too fast to catch and too resilient to be captured by centralized gatekeepers. 
 
-  A privacy-first, file-based publishing engine. No databases. No plugins. No bloat.<br>
-  Instant, portable, resilient publishing that feels like thinking out loud.
+This is the core foundation—the "Engine Room" of the **Defiant**.
 
+---
 
-  <a href="https://taria.app"><strong>Live Site → taria.app</strong></a>
-  ·
-  <a href="https://github.com/SIGNA-AGENCY/TARIA/releases">Releases</a>
-  ·
-  <a href="#installation">Installation</a>
-  ·
-  <a href="#license">License</a>
+## ⚡ Tactical Performance
 
+* **273ms Provisioning:** From command to live node. TARIA clones instances and maps subdomains at the speed of the filesystem, bypassing the latency of traditional installation scripts.
+* **Database-Free (No-DB):** Structural resilience by design. By eliminating the SQL layer, TARIA removes the most common point of failure and surveillance. 
+* **Custom LEP Stack:** Hardened on a hand-compiled **PHP 8.5** environment optimized for zero-bloat execution and sub-300ms global delivery.
+* **Flex-UI:** A command interface built entirely on fluid flex containers, optimized for rapid interaction and layout adaptability.
 
-## What is TARIA?
+---
 
-TARIA is a lightweight publishing engine built for speed, ownership, and simplicity.
+## 🛠 How it Works (The Meta)
 
-- Content lives as plain JSON files + Markdown blocks
-- Zero database (no MySQL, no migrations, no query overhead)
-- PHP-powered rendering with predictable performance (<300ms publishes)
-- Assets offloaded to Bunny CDN → origin stays text-only and lean
-- Multisite by design: isolated sites, shared immutable engine
-- Terminal-first CLI + minimalist dashboard for real writers
-- Privacy by construction: no cookies for visitors, server-side analytics only
+TARIA operates as a **"Ghost Ship"** in the digital fog. It doesn't "install" content; it **projects** it.
 
-Publishing should not feel like operating software.  
-TARIA removes the friction so you can go from idea to live in seconds.
+1.  **The Spine:** A minimalist `router.php` that resolves host requests to isolated site folders in real-time.
+2.  **The Isolinear Chips:** Your content is stored in clean, portable **JSON files**. No proprietary blobs, no complex schemas.
+3.  **The Cloak:** Aggressive header scrubbing and a database-free footprint make the node nearly invisible to automated scrapers and scanners.
+4.  **The Signal:** Optimized for edge delivery via **Bunny CDN** or **Cloudflare**, ensuring your words reach the world before the gatekeepers can react.
 
-## Core Principles
+---
 
-- **File-first, database-free** → Everything is files. Portable and resilient.
-- **Capability reduction over control** → Dangerous features are removed, not managed.
-- **Privacy by construction** → No third-party scripts, no tracking pixels.
-- **Performance as baseline** → Flat files + CDN = blink-fast loads.
-- **Ownership first** → Export anytime. Leave anytime. No lock-in.
+## 🛡 Strategic Portability
 
-## Features
+TARIA is designed for **Hostile Environments.** * **Extraction:** One command to pull your entire signal into a clean JSON/TXT dump. 
+* **Eject Protocol:** Because there is no database, a "Self-Destruct" is a literal file-system wipe. In seconds, the node is dark.
+* **Resurrection:** Move your JSON chips to any fresh TARIA node. Upload, map, and resume your transmission. The signal survives even if the machine does not.
 
-- Blogging, static pages, galleries, podcasts (RSS-ready)
-- Block-based editor with Markdown support (no WYSIWYG bloat)
-- Ecommerce basics (Stripe, PayPal, Bitcoin – no platform fees)
-- Privacy-first analytics (aggregated, server-side only)
-- RTL language support
-- Media sanitization + metadata stripping
-- Atomic deployments, versioned engine, instant rollbacks
-- CLI commands for site creation, publish, health checks
+---
 
-## Quick Start (Local Development)
+## 🧭 The Philosophy
 
-1. Clone the repo
+Most web tools are built to keep you stationary. **TARIA is built to keep you moving.** It treats the website not as a permanent "home" to be defended, but as a **Tactical Position** to be held as long as it remains useful.
 
-```bash
-git clone https://github.com/SIGNA-AGENCY/TARIA.git
-cd TARIA
+* **Minimalism as Defense:** What isn't there can't be hacked.
+* **Speed as Sovereignty:** If you can move in 273ms, you can outrun the noise.
+* **Words as Priority:** The machine exists only to serve the message.
+
+---
+
+`[ STATUS ]: Signal Integrity 100%`  
+`[ MISSION ]: Ready for transmission.`
